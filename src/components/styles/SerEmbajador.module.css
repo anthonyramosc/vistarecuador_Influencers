@@ -1,0 +1,159 @@
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.heroCard {
+    background-color: #96C121;
+    border-radius: 8px;
+    border: none;
+}
+
+.heroContent {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.title {
+    color: white !important;
+    font-style: italic;
+    margin-bottom: 16px !important;
+    margin-left: 50px !important;
+}
+
+.subtitle {
+    color: white;
+    font-size: 18px;
+    max-width: 500px;
+    margin-bottom: 24px;
+    margin-left: 50px !important;
+}
+
+.applyButton {
+    background-color: white;
+    color: #96C121;
+    font-weight: bold;
+    font-style: italic;
+    border: none;
+    margin-left: 50px !important;
+}
+
+.applyButton:hover {
+    background-color: #f0f0f0;
+    color: #85ac1e;
+}
+
+.heroImageContainer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.heroImage {
+ width: 250px;
+    height: 300px;
+}
+
+.sectionRow {
+    margin-top: 15px;
+}
+
+.sectionTitle {
+    color: #96C121;
+    font-style: italic;
+    margin-bottom: 16px !important;
+}
+
+.paragraph {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.benefitCard {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s;
+    border: 1px solid #f0f0f0;
+}
+
+.benefitCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.benefitIcon {
+    margin-bottom: 16px;
+}
+
+.benefitTitle {
+    color: #96C121;
+    font-size: 18px !important;
+    margin-bottom: 8px !important;
+}
+
+.benefitDesc {
+    color: #666;
+}
+
+.requirementsCard {
+    border: 1px solid #f0f0f0;
+}
+
+.requirementText {
+    font-size: 16px;
+}
+
+.testimonialCard {
+    height: 100%;
+    border: 1px solid #f0f0f0;
+}
+
+.testimonialHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.testimonialInfo {
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonialContent {
+    font-style: italic;
+    color: #666;
+}
+
+.ctaSection {
+    margin-top: 16px;
+    margin-bottom: 32px;
+}
+
+.ctaCard {
+    background-color: #f9f9f9;
+    text-align: center;
+    padding: 24px;
+    border: 1px solid #f0f0f0;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .heroContent {
+        flex-direction: column;
+    }
+
+    .heroImageContainer {
+        margin-top: 24px;
+        justify-content: center;
+    }
+
+    .heroImage {
+        max-width: 100%;
+    }
+}

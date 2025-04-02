@@ -1,0 +1,142 @@
+/* Update the cancion.module.css file with these styles */
+.cancionContainer {
+    padding: 0 0 20px 0;
+    width: 100%;
+}
+
+.sectionSubtitle {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 16px;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.cancionCard {
+    border-radius: 12px;
+    height: 500px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    background: linear-gradient(to bottom right, #f9f9f9, #f0f0f0);
+    width: 100%;
+}
+.iframe{
+    height: 300px;
+}
+.cancionCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.cancionContent {
+    padding: 16px;
+    margin-top: -35px;
+}
+
+.cancionTitle {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.cancionDescription {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.cancionMeta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.metaLeft {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.views {
+    font-size: 12px;
+    color: #666;
+    display: flex;
+    align-items: center;
+}
+
+.comments {
+    font-size: 12px;
+    color: #666;
+    display: flex;
+    align-items: center;
+}
+
+.metaRight {
+    display: flex;
+    align-items: center;
+}
+
+.price {
+    font-weight: 700;
+    color: #339933;
+    font-size: 16px;
+}
+
+.cancionActions {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.playButton, .shareButton {
+    padding: 8px 12px;
+    border-radius: 24px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+}
+
+.playButton {
+    background: linear-gradient(to right, #96c121, #005F6B);
+    color: white;
+    flex: 2;
+}
+
+.playButton:hover {
+    background: linear-gradient(to right, #005F6B, #96c121);
+    transform: translateY(-2px);
+}
+
+.shareButton {
+    background: white;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    flex: 1;
+}
+
+.shareButton:hover {
+    background: #f5f5f5;
+    transform: translateY(-2px);
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .cancionCard {
+        max-width: 100%;
+    }
+
+    .cancionMeta {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

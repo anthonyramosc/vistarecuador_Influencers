@@ -1,0 +1,343 @@
+.container {
+    margin-top: 0;
+    padding-top: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    position: relative;
+    z-index: 1;
+    clear: both;
+
+    background-color: #fff;
+
+}
+
+.mainContent {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 10px;
+    box-sizing: border-box;
+    flex-direction: row;
+    padding: 0 220px;
+    background-color: #fff;
+}
+
+.contentArea {
+    flex: 1;
+    width: 404px;
+    margin-left: 0;
+    background-color: #fff;
+}
+
+.sidebarArea {
+    width: 380px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+    align-self: flex-start;
+    background-color: #fff;
+}
+
+.projectsContainer,
+.hazloRealidadSection {
+    width: 100%;
+    margin: 40px 0;
+    padding: 20px 0;
+}
+
+.carousel {
+    margin: 0 !important;
+    padding: 0;
+    width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+    position: relative;
+    z-index: 5;
+}
+
+.carouselSlide {
+    height: 400px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.heroSection {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+    position: relative;
+    z-index: 5;
+    overflow: visible;
+    margin-top: 0 !important;
+}
+
+.ecuadorLinksSection {
+    width: calc(100% - 400px);
+    margin: 40px auto !important;
+    padding: 0;
+    text-align: center;
+    height: 300px;
+}
+
+.divider {
+    margin: 32px 0 !important;
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.sidebarContainer {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+}
+
+.sidebarTitle {
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+.sidebarSection {
+    margin-bottom: 32px;
+}
+
+.sidebarSection:last-child {
+    margin-bottom: 0;
+}
+
+.sectionTitle {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.sectionSubtitle {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.projectCarousel {
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    width: 100%;
+}
+
+.realityCardsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.realityCardRow {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.realityCardWrapper {
+    position: relative;
+    width: 100%;
+}
+
+.realityVoteCard {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.linksCardRow {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    justify-content: center;
+}
+
+.linkCard {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.linkCard:hover {
+    transform: translateY(-5px);
+}
+
+.linkCardImgContainer {
+    overflow: hidden;
+    height: 180px;
+}
+
+.linkCardImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.linkCardImage:hover {
+    transform: scale(1.05);
+}
+.linksSectionWrapper {
+    width: 100%;
+    margin: 40px 0;
+    padding: 0;
+}
+
+@media (max-width: 1480px) {
+    .mainContent {
+        padding: 0 clamp(20px, 5vw, 120px);
+    }
+
+    .ecuadorLinksSection {
+        width: 90%;
+        margin: 40px auto !important;
+    }
+}
+@media (max-width: 1280px) {
+    .mainContent {
+        padding: 0 clamp(20px, 5vw, 60px);
+    }
+
+    .sidebarArea {
+        width: 320px;
+    }
+
+    .ecuadorLinksSection {
+        width: 92%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .mainContent {
+        flex-direction: column;
+        padding: 0 clamp(10px, 5vw, 60px);
+        gap: 20px;
+    }
+
+    .contentArea {
+        width: 100%;
+    }
+
+    .sidebarArea {
+        width: 100%;
+        position: static;
+        margin-top: 20px;
+    }
+
+    .ecuadorLinksSection {
+        width: 95%;
+        height: auto;
+    }
+
+    .linksCardRow {
+        flex-wrap: wrap;
+    }
+}
+
+@media(max-width: 992px){
+    .heroSection,.carousel{
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin-top: 0;
+    }
+
+    .heroSection {
+        margin-top: 0;
+    }
+
+    .mainContent {
+        padding: 0 15px;
+        gap: 15px;
+    }
+
+    .carousel,
+    .carouselSlide {
+        height: 300px;
+        max-height: 300px;
+    }
+
+    .linksCardRow {
+        gap: 10px;
+    }
+
+    .linkCardImgContainer {
+        height: 140px;
+    }
+}
+
+@media (max-width: 576px) {
+    .mainContent {
+        padding: 0 10px;
+    }
+
+    .sidebarTitle {
+        font-size: 20px;
+    }
+
+    .sectionTitle {
+        font-size: 22px;
+    }
+
+    .sectionSubtitle {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .carousel, .carouselSlide {
+        height: 220px;
+        max-height: 200px;
+    }
+
+    .realityCardRow {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+}
+
+
+@media (max-width: 360px) {
+
+
+    .sectionTitle {
+        font-size: 20px;
+    }
+
+    .linkCardImgContainer {
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carouselSlide {
+        height: 180px;
+        max-height: 180px;
+    }
+}

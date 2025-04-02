@@ -1,0 +1,326 @@
+
+.beneficiosContainer {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.beneficiosDescription {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.benefitsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.benefitCard {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefitCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.benefitImageContainer {
+    height: 180px;
+    overflow: hidden;
+}
+
+.benefitImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.benefitCard:hover .benefitImage {
+    transform: scale(1.05);
+}
+
+.benefitContent {
+    padding: 1.5rem;
+    background: #fff;
+}
+
+.benefitTitle {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: #2a5d2a;
+}
+
+.benefitDescription {
+    color: #666;
+    line-height: 1.5;
+}
+
+.partnersSection {
+    margin-top: 4rem;
+}
+
+.partnersTitle {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    color: #2a5d2a;
+}
+
+.partnersGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+    align-items: center;
+}
+
+.partnerLogo {
+    width: 100%;
+    max-height: 120px;
+    object-fit: contain;
+    filter: grayscale(20%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.partnerLogo:hover {
+    filter: grayscale(0);
+    transform: scale(1.05);
+}
+
+/* Adhesion.module.css */
+.adhesionContainer {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.adhesionInfo {
+    display: flex;
+    align-items: center;
+}
+
+.adhesionImage {
+    flex: 1;
+}
+
+.adhesionImage img {
+    width: 100%;
+    max-width: 100px;
+    max-height: 250px;
+    border-radius: 8px;
+}
+
+.adhesionDescription {
+    flex: 2;
+    min-width: 300px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+    margin-left: -350px;
+}
+
+.formContainer {
+    background: #f8f8f8;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.formTitle {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    color: #2a5d2a;
+}
+
+.form {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.formRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.formItem {
+    flex: 1;
+    min-width: 250px;
+}
+
+.redesTitle {
+    margin: 1.5rem 0 1rem;
+    color: #2a5d2a;
+}
+
+.submitButton {
+    background-color: #8CC63F;
+    border-color: #8CC63F;
+    height: 45px;
+    font-size: 1.1rem;
+    width: 200px;
+    display: block;
+    margin: 2rem auto 0;
+}
+
+.submitButton:hover {
+    background-color: #7ab334;
+    border-color: #7ab334;
+}
+
+.link {
+    color: #8CC63F;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+/* Medios.module.css */
+.mediosContainer {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mediosDescription {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+.mediaTabs {
+    margin-bottom: 3rem;
+}
+
+.mediaGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.mediaCard {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.mediaImage {
+    height: 200px;
+    object-fit: cover;
+}
+
+.mediaTitle {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    color: #2a5d2a;
+}
+
+.mediaDescription {
+    color: #666;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.mediaFooter {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.readMoreButton {
+    background-color: #8CC63F;
+    border-color: #8CC63F;
+    width: 100%;
+}
+
+.readMoreButton:hover {
+    background-color: #7ab334;
+    border-color: #7ab334;
+}
+
+.contactMediaSection {
+    margin-top: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    background: #f8f8f8;
+    border-radius: 8px;
+    padding: 2rem;
+    align-items: center;
+}
+
+.contactMediaContent {
+    flex: 2;
+    min-width: 300px;
+}
+
+.contactMediaContent h3 {
+    color: #2a5d2a;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.contactMediaContent p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.contactButton {
+    background-color: #8CC63F;
+    border-color: #8CC63F;
+    height: 45px;
+    font-size: 1.1rem;
+}
+
+.contactButton:hover {
+    background-color: #7ab334;
+    border-color: #7ab334;
+}
+
+.contactMediaImage {
+    flex: 1;
+    min-width: 250px;
+}
+
+.mediaContactImage {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .benefitsGrid,
+    .partnersGrid,
+    .mediaGrid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    .adhesionInfo,
+    .contactMediaSection {
+        flex-direction: column;
+    }
+
+    .formRow {
+        flex-direction: column;
+        gap: 0;
+    }
+}

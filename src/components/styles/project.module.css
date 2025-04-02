@@ -1,0 +1,59 @@
+
+.project-detail-modal .ant-modal-content {
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.project-detail-modal .ant-modal-close {
+    display: none;
+}
+
+.project-detail-modal .ant-image {
+    width: 100%;
+}
+
+.project-detail-modal .ant-btn-primary:hover {
+    background: linear-gradient(to right, #005F6B, #96c121) !important;
+    box-shadow: 0 6px 16px rgba(0, 95, 107, 0.4) !important;
+}
+
+.project-detail-modal .ant-tag:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+    transition: transform 0.2s ease;
+}
+
+/* Hover effects for cards - make these styles available globally */
+.projectCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.imageContainer:hover .projectImage {
+    transform: scale(1.05);
+}
+
+.imageContainer:hover .imageOverlay {
+    opacity: 1;
+}
+
+.imageContainer:hover .viewButton {
+    transform: translateY(0);
+}
+
+.viewButton:hover {
+    background: linear-gradient(to right, #005F6B, #96c121) !important;
+}
+
+/* Responsive styles for modal */
+@media (max-width: 768px) {
+    .project-detail-modal {
+        width: 90% !important;
+        margin: 0 auto;
+    }
+
+    .project-detail-modal .ant-modal-body {
+        padding: 0;
+    }
+}

@@ -1,0 +1,562 @@
+.sliderContainer {
+    width: 100%;
+    border-radius: 8px;
+    padding: 24px;
+    margin: 32px 0;
+}
+
+.sliderTitle {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sliderSubtitle {
+    color: #666;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.sliderWrapper {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.navButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background-color: white;
+    border-radius: 50%;
+    padding: 8px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.navButton:hover {
+    background-color: #f5f5f5;
+}
+
+.prevButton {
+    composes: navButton;
+    left: 0;
+}
+
+.nextButton {
+    composes: navButton;
+    right: 0;
+}
+
+.sliderViewport {
+    overflow: hidden;
+    margin: 0 40px;
+    width: calc(100% - 80px);
+}
+
+.sliderTrack {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.profileCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.profileCard:hover {
+    transform: scale(1.05);
+}
+
+.profileImageContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 94px;
+    height: 94px;
+    margin-bottom: 8px;
+}
+
+.profileImage {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #3b82f6;
+    transition: transform 0.2s ease;
+}
+
+.profileCard:hover .profileImage {
+    transform: scale(1.1);
+}
+
+.profileName {
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.profileRole {
+    font-size: 12px;
+    color: #6b7280;
+    text-align: center;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sliderIndicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.indicatorDot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #d1d5db;
+    margin: 0 4px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.active {
+    background-color: #3b82f6;
+}
+
+.videoThumbnail {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.videoThumbnail:hover {
+    transform: scale(1.05);
+}
+
+.socialLinks {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 16px;
+}
+
+.socialLinks a {
+    color: #3b82f6;
+    font-size: 24px;
+    transition: color 0.2s ease;
+}
+
+.socialLinks a:hover {
+    color: #1d4ed8;
+}
+
+.influencerModal .ant-modal-content {
+    border-radius: 16px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.influencerModal .ant-modal-close {
+    right: 24px;
+    top: 24px;
+}
+
+.influencerModal .ant-modal-header {
+    display: none;
+}
+
+.influencerModalHeader {
+    position: relative;
+    height: 120px;
+    background: linear-gradient(to right, #3b82f6, #8b5cf6);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 20px;
+}
+
+.influencerModalProfileImageContainer {
+    position: relative;
+    margin-bottom: -60px;
+    z-index: 10;
+}
+
+.influencerModalProfileImage {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.influencerModalProfileImage:hover {
+    transform: scale(1.05);
+}
+
+.influencerModalInfo {
+    text-align: center;
+    padding: 24px 24px 24px;
+    background: white;
+    border-radius: 0 0 16px 16px;
+}
+
+.influencerModalName {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 8px;
+}
+
+.influencerModalRole {
+    font-size: 16px;
+    color: #6b7280;
+    margin-bottom: 16px;
+}
+
+.influencerModalBio {
+    font-style: italic;
+    color: #4b5563;
+    margin-bottom: 24px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.influencerModalSocialLinks {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.influencerModalSocialLink {
+    font-size: 28px;
+    color: #3b82f6;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.influencerModalSocialLink:hover {
+    color: #1d4ed8;
+    transform: scale(1.2);
+}
+
+.influencerModalVideosSection {
+    background-color: #f3f4f6;
+    padding: 24px;
+    border-radius: 16px;
+    margin: 0 24px 24px;
+}
+
+.influencerModalVideoGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.videosTitle {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 16px;
+    color: #1f2937;
+}
+
+.influencerModalVideoThumbnail {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    background: #f3f4f6;
+    height: 300px;
+}
+
+.influencerModalVideoThumbnail:hover {
+    transform: scale(1.05);
+}
+
+.influencerModalVideoTitle {
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    padding: 8px;
+    color: #4b5563;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.modalTabs {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #e5e7eb;
+    margin: 0 0 20px 0;
+    padding: 0;
+    width: 100%;
+
+}
+
+.tabButton {
+    background: none;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #6b7280;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.tabButton:hover {
+    color: #3b82f6;
+}
+
+.activeTab {
+    color: #3b82f6;
+    font-weight: 600;
+}
+
+.activeTab::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #3b82f6;
+    border-radius: 1px;
+}
+
+.tabContent {
+    min-height: 150px;
+    padding: 0 20px;
+}
+
+/* Social links grid for the social tab */
+.socialLinksGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.socialLinkCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    background-color: #f9fafb;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.socialLinkCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.socialIconWrapper {
+    margin-bottom: 8px;
+}
+
+.socialPlatformName {
+    font-size: 14px;
+    color: #4b5563;
+}
+
+.noContentMessage {
+    text-align: center;
+    color: #6b7280;
+    font-style: italic;
+    padding: 30px 0;
+}
+
+/* Modal Navigation Buttons - NEW */
+.modalNavPrev,
+.modalNavNext {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.modalNavPrev {
+    left: -20px;
+}
+
+.modalNavNext {
+    right: -20px;
+}
+
+.modalNavPrev:hover,
+.modalNavNext:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.modalNavPrev:focus,
+.modalNavNext:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .influencerModalProfileImage {
+        width: 120px;
+        height: 120px;
+    }
+
+    .influencerModalName {
+        font-size: 20px;
+    }
+
+    .sliderViewport {
+        margin: 0 20px;
+        width: calc(100% - 40px);
+    }
+
+    .sliderTitle {
+        font-size: 20px;
+    }
+
+    .profileImageContainer {
+        width: 70px;
+        height: 70px;
+    }
+
+    .profileImage {
+        width: 60px;
+        height: 60px;
+    }
+
+    .profileName {
+        font-size: 12px;
+    }
+
+    .profileRole {
+        font-size: 10px;
+    }
+
+    .influencerModal {
+        margin-top: -40px !important;
+    }
+
+    .influencerModalHeader {
+        height: 150px;
+    }
+
+    .influencerModalProfileImageContainer {
+        margin-bottom: -40px;
+    }
+
+    .influencerModalInfo {
+        padding: 16px;
+    }
+
+    .influencerModalRole {
+        font-size: 14px;
+    }
+
+    .influencerModalSocialLinks {
+        gap: 16px;
+    }
+
+    .influencerModalVideosSection {
+        padding: 16px;
+        margin: 0 16px 16px;
+    }
+
+    .influencerModalVideoGrid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 8px;
+    }
+
+    .influencerModalVideoTitle {
+        font-size: 12px;
+        padding: 4px;
+    }
+
+    .tabButton {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .tabContent {
+        min-height: 120px;
+        padding: 0 12px;
+    }
+
+    .socialLinksGrid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 10px;
+    }
+
+    /* Responsive navigation buttons - NEW */
+    .modalNavPrev,
+    .modalNavNext {
+        width: 32px;
+        height: 32px;
+    }
+
+    .modalNavPrev {
+        left: -16px;
+    }
+
+    .modalNavNext {
+        right: -16px;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+    .sliderViewport {
+        margin: 0 30px;
+        width: calc(100% - 60px);
+    }
+
+    .influencerModal {
+        margin-top: -60px !important;
+    }
+
+    .influencerModalVideoGrid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}

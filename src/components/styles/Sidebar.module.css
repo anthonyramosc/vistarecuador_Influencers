@@ -1,0 +1,73 @@
+
+.sidebarContainer {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.sidebarTitle {
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 16px;
+    padding: 0 16px;
+}
+
+.sidebarSection {
+    margin-bottom: 32px;
+}
+
+.sidebarSection:last-child {
+    margin-bottom: 0;
+}
+
+.sidebarHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding: 0 16px;
+}
+
+.sidebarHeaderTitle {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.sidebarHeaderLink {
+    font-size: 14px;
+    color: #339933;
+    cursor: pointer;
+}
+
+.sidebarHeaderLink:hover {
+    text-decoration: underline;
+}
+
+.sidebarContent {
+    padding: 0 16px;
+}
+
+/* Styling for sidebar items when stacked on mobile */
+@media (max-width: 1024px) {
+    .sidebarContainer {
+        margin-top: 32px;
+    }
+
+    .sidebarSection {
+        margin-bottom: 24px;
+    }
+}
+
+/* For very small screens */
+@media (max-width: 576px) {
+    .sidebarTitle {
+        font-size: 20px;
+    }
+
+    .sidebarHeaderTitle {
+        font-size: 16px;
+    }
+}

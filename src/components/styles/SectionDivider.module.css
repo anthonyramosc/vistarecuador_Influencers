@@ -1,0 +1,28 @@
+.dividerContainer {
+    width: 100%;
+    margin: 32px 0 16px 0;
+
+}
+
+.divider {
+    margin: 0 !important;
+    border-color: #f0f0f0;
+}
+
+.dividerTitle {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    padding: 0 12px;
+    margin-top: 50px !important;
+}
+
+@media (max-width: 768px) {
+    .dividerContainer {
+        margin: 24px 0 12px 0;
+    }
+
+    .dividerTitle {
+        font-size: 16px;
+    }
+}

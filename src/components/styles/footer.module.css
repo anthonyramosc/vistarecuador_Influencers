@@ -1,0 +1,198 @@
+
+.footer {
+    background: #F2F2F2;
+    color: #ffffff;
+    padding: 40px 0 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #fff2f0, #96c121, #fff2f0);
+}
+
+.topSection {
+    padding-bottom: 30px;
+}
+
+.newsletterTitle,
+.appTitle {
+    color: #ffffff !important;
+    margin-bottom: 10px !important;
+    font-weight: 600 !important;
+}
+
+.newsletterText,
+.appText {
+    color: #e3e3e3;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.subscribeForm {
+    display: flex;
+    margin-top: 15px;
+}
+
+.emailInput {
+    flex: 1;
+    padding: 10px 15px;
+    border-radius: 4px 0 0 4px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.subscribeButton {
+    background: #96c121 !important;
+    border-color: #96c121 !important;
+    border-radius: 0 4px 4px 0;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.subscribeButton:hover {
+    background: #ff5252 !important;
+    border-color: #ff5252 !important;
+    transform: translateY(-2px);
+}
+
+.storeButtons {
+    display: flex;
+    gap: 10px;
+}
+
+    .socialIcon {
+        font-size: 18px;
+        color: #96c121;
+        padding: 5px;
+    }
+
+.appStoreButton:hover,
+.playStoreButton:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    color: white;
+}
+
+.footerDivider {
+    margin: 0 0 30px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.bottomSection {
+    padding-bottom: 30px;
+}
+
+.brandSection {
+    margin-bottom: 20px;
+}
+
+.footerLogo {
+    width: 180px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.brandDescription {
+    color: #e3e3e3;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.bottomSectionTitle {
+    color: #587516;
+    font-weight: bold;
+    font-size: 15px;
+    position: relative;
+    padding-bottom: 8px;
+    text-transform: uppercase;
+
+}
+
+.bottomSectionTitle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: #ffffff;
+}
+
+.bottomLinksList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+.bottomLinkItem {
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.bottomLinkItem:hover {
+    transform: translateX(5px);
+}
+
+.bottomLink {
+    color: #587516 !important;
+    font-size: 14px;
+}
+
+.whatsappButton {
+    position: fixed;
+    bottom: 20px;
+    right: 0px;
+    z-index: 1000;
+}
+
+.whatsappIcon {
+    height: 100px;
+    width: 100px;
+    color: white;
+
+}
+
+.linkIcon {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+.socialSection {
+    text-align: center;
+    position: relative;
+    background-color: #F2F2F2;
+    margin-top: 5px ;
+}
+
+.socialLinks {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.copysection{
+    margin-top: -20px;
+}
+
+.logoFooter{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: -8px;
+}
+.logofooter {
+    height: 2.5rem;
+    margin-bottom: 0.5rem;
+}
