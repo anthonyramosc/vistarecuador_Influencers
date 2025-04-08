@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../styles/promotionsDownload.module.css';
 import {PromosBenefitsProps} from "../../interfaces/interfaces.ts";
+import {FacebookOutlined, RiseOutlined} from "@ant-design/icons";
 
 
 
@@ -9,8 +10,23 @@ const PromotionsBenefitsSection: React.FC<PromosBenefitsProps> = ({ promotions, 
         <div className={styles.promotionsBenefitsContainer}>
             <div className={styles.sectionWrapper}>
                 <div className={styles.promotionsBenefitsHeader}>
-                    <div className={styles.headerLeft}>Promociones</div>
-                    <div className={styles.headerRight}>Beneficios</div>
+                    <div className={styles.headerLeft}>  <FacebookOutlined
+                        className="titleIcon"
+                        style={{
+                            color: '#ff4d4f',
+                            fontSize: '24px',
+                            marginRight: 10,
+                        }}
+                    />Promociones</div>
+                    <div className={styles.headerRight}>  <RiseOutlined
+                        className="titleIcon"
+                        style={{
+                            color: '#ff4d4f',
+                            fontSize: '24px',
+                            marginRight: 10,
+
+                        }}
+                    />Beneficios</div>
                 </div>
 
                 <div className={styles.promotionsBenefitsContent}>
@@ -47,7 +63,12 @@ const PromotionsBenefitsSection: React.FC<PromosBenefitsProps> = ({ promotions, 
                             </div>
                         ))}
                         <div className={styles.viewMoreContainer}>
-                            <a href="#" className={styles.viewMoreLink}>
+                            <a href="#" className={styles.viewMoreLink}  onClick={() => {
+                                window.dispatchEvent(new CustomEvent("menuClick", { detail: { menuItem: 'beneficios' } }));
+                                setTimeout(() => {
+                                    window.dispatchEvent(new Event("beneficiosClick"));
+                                }, 100);
+                            }}>
                                 Más Beneficios
                                 <span className={styles.arrowIcon}>➔</span>
                             </a>

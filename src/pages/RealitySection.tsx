@@ -68,19 +68,20 @@ const RealitySection: React.FC<RealitySectionProps> = ({ realityCards }) => {
 
     return (
         <div className="hazloRealidadSection">
-            <div className="sectionHeader">
-                <div className="titleContainer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div className="sectionHeader" >
+                <div className="titleContainer" style={{ display: 'flex', alignItems: 'end', justifyContent: 'start',marginBottom: '8px', }}>
                     <FireOutlined className="titleIcon" style={{ color: '#ff4d4f', fontSize: '24px', marginLeft: -20 }} />
                     <Title level={3} className="hazloRealidadTitle" style={{  color: '#333', margin: 0, marginLeft: '10px', textTransform: "uppercase", letterSpacing:0.5, fontWeight:700, fontSize: 24 }}>
                         Hagámoslo Realidad
                     </Title>
                 </div>
-                <Text className="hazloRealidadSubtitle" style={{ fontSize: '16px', color: '#777', marginTop: '5px', display: 'block', textAlign: 'center' }}>
+                <Text className="hazloRealidadSubtitle" style={{ fontSize: '16px', color: '#777', marginTop: '5px', display: 'block', textAlign: 'start',marginBottom: '20px',
+                    marginLeft: '50px', }}>
                     Vota por tus ideas favoritas y ayúdalas a hacerse realidad
                 </Text>
             </div>
 
-            <div className="realityCardsContainer" style={{ display: 'flex', alignItems: 'center', width: '100%', position: 'relative', marginTop: '20px' }}>
+            <div className="realityCardsContainer" style={{ display: 'flex', alignItems: 'start', width: '100%', position: 'relative', marginTop: '40px', height:'450px' }}>
                 <Row gutter={[24, 24]} style={{
                     display: 'flex',
                     flex: 1,
@@ -98,13 +99,13 @@ const RealitySection: React.FC<RealitySectionProps> = ({ realityCards }) => {
                                         hoverable
                                         cover={
                                             <div
-                                                style={{ height: '200px', overflow: 'hidden', cursor: 'pointer' }}
+                                                style={{ height: '300px', overflow: 'hidden', cursor: 'pointer' }}
                                                 onClick={() => handleCardClick(reality)}
                                             >
                                                 <img
                                                     alt={reality.title}
                                                     src={reality.image}
-                                                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                                    style={{ width: '100%', height: '100%', objectFit: 'cover',  }}
                                                 />
                                             </div>
                                         }

@@ -11,6 +11,7 @@ import {
     WhatsAppOutlined,
     CloseOutlined
 } from "@ant-design/icons";
+import CategoryFilters from "./News/CategoryFilters.tsx";
 
 interface NewsItem {
     id: string;
@@ -165,27 +166,11 @@ const NewsSection: React.FC = () => {
                 </h2>
             </div>
 
-            <div style={{ marginBottom: '20px', display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
-                {categories.map(category => (
-                    <button
-                        key={category}
-                        onClick={() => setActiveCategory(category)}
-                        style={{
-                            background: activeCategory === category ? '#e30613' : '#f0f0f0',
-                            color: activeCategory === category ? 'white' : '#333',
-                            border: 'none',
-                            padding: '8px 16px',
-                            borderRadius: '20px',
-                            fontSize: '13px',
-                            fontWeight: 'bold',
-                            cursor: 'pointer',
-                            transition: 'all 0.3s ease'
-                        }}
-                    >
-                        {category}
-                    </button>
-                ))}
-            </div>
+            <CategoryFilters
+                categories={categories}
+                activeCategory={activeCategory}
+                setActiveCategory={setActiveCategory}
+            />
 
             <div className={styles.newsGrid}>
                 {filteredNews.map((item) => (

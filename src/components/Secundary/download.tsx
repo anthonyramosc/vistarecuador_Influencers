@@ -59,9 +59,29 @@ const DownloadsSection: React.FC<DownloadsSectionProps> = ({ downloadItems }) =>
         <div className={styles.downloadsContainer}>
             <div className={styles.sectionWrapper}>
                 <div className={styles.downloadsHeader}>
-                    <h2 style={{textTransform: "uppercase", letterSpacing:0.5, fontWeight:700, fontSize: 20}}>
-                        <DownloadOutlined className="titleIcon" style={{ color: '#ffffff', fontSize: '24px', marginRight: 10}} />
+                    <h2 style={{
+                        textTransform: "uppercase",
+                        letterSpacing: 0.5,
+                        fontWeight: 700,
+                        fontSize: 24,
+                        textAlign: 'start'
+                    }}>
+                        <DownloadOutlined className="titleIcon" style={{
+                            color: '#ff4d4f',
+                            fontSize: '24px', marginRight: 10
+                        }}/>
                         Descargas</h2>
+
+                    <p className="sectionSubtitle" style={{
+                        fontSize: '16px',
+                        color: '#666',
+                        marginBottom: '44px',
+                        textAlign: 'start',
+                        marginLeft: '50px',
+                        marginTop: '10.5px'
+                    }}>
+                        Descubre nuestros proyectos más innovadores
+                    </p>
                 </div>
 
                 <div

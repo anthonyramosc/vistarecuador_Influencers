@@ -117,17 +117,18 @@ const Facebook: React.FC<FacebookSectionProps> = ({ facebookRef }) => {
 
     return (
         <div className={styles.facebookContainer} ref={facebookRef}>
-            <div>
+            <div style={{backgroundColor:'white'}}>
                 <h2
                     style={{
                         color: '#333',
                         margin: 0,
                         background: "white",
-                        marginTop: -50,
-                        fontSize: 18,
+                        marginTop: -55,
+                        fontSize: 24,
                         textTransform: "uppercase",
                         letterSpacing: 0.5,
-                        fontWeight: 700
+                        fontWeight: 700,
+                        textAlign: 'start'
                     }}
                 >
                     <FacebookOutlined
@@ -136,11 +137,20 @@ const Facebook: React.FC<FacebookSectionProps> = ({ facebookRef }) => {
                             color: '#ff4d4f',
                             fontSize: '24px',
                             marginRight: 10,
-                            marginLeft: 30
                         }}
                     />
-                    Comunidad
+                    Nuestra Comunidad
                 </h2>
+                <p className="sectionSubtitle" style={{
+                    fontSize: '16px',
+                    color: '#666',
+                    marginBottom: '44px',
+                    textAlign: 'start',
+                    marginLeft: '50px',
+                    marginTop: '10.5px'
+                }}>
+                    Descubre nuestros proyectos más innovadores
+                </p>
                 <div className={styles.fbHeader}>
                     <div className={styles.fbPageInfo}>
                         <img

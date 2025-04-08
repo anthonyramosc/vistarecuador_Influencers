@@ -1,0 +1,190 @@
+.contactoContainer {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contactoHeader {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contactoHeader h1 {
+    font-size: 2.5rem;
+    color: #005a87;
+    margin-bottom: 1rem;
+}
+
+.contactoHeader p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.contactContent {
+    margin-bottom: 3rem;
+}
+
+.contactInfo {
+    height: 100%;
+}
+
+.contactCard {
+    height: 100%;
+    background-color: #f8f9fa;
+    border-left: 4px solid #8CC63F;
+}
+
+.contactCard h2 {
+    color: #005a87;
+    margin-bottom: 1.5rem;
+}
+
+.contactItem {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    padding: 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Enhanced styling for active contact method */
+.activeMethod {
+    background-color: rgba(140, 198, 63, 0.15);
+    border-left: 4px solid #8CC63F;
+    transform: translateX(5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.activeMethod .contactIcon {
+    color: #8CC63F;
+    font-size: 1.7rem;
+}
+
+.activeMethod h3 {
+    color: #005a87;
+    font-weight: 600;
+}
+
+.contactIcon {
+    font-size: 1.5rem;
+    color: #8CC63F;
+    margin-right: 1rem;
+    margin-top: 0.3rem;
+    transition: all 0.3s ease;
+}
+
+.contactItem h3 {
+    margin: 0 0 0.3rem 0;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.contactItem p {
+    margin: 0;
+    color: #666;
+}
+
+.contactItem:hover {
+    background-color: rgba(140, 198, 63, 0.08);
+}
+
+.socialIcons {
+    display: flex;
+    margin-top: 2rem;
+}
+
+.socialButton {
+    margin-right: 0.5rem;
+    background-color: #f0f2f5;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.socialButton:hover {
+    background-color: #dcdfe3;
+}
+
+.formCard {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.formCard h2 {
+    color: #005a87;
+    margin-bottom: 1rem;
+}
+
+
+.submitButton {
+    background-color: #8CC63F;
+    width: 100%;
+    height: 45px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.whatsappButton {
+    background-color: #8CC63F;
+}
+
+
+
+.emailButton {
+    background-color:#8CC63F;
+}
+
+
+.mapContainer {
+    margin-top: 3rem;
+    scroll-margin-top: 20px;
+}
+
+.mapContainer h2 {
+    color: black;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.map {
+    width: 100%;
+    height: 350px;
+    border-radius: 8px;
+    overflow: hidden;
+    text-transform: uppercase;
+}
+
+.placeholderMap {
+    width: 100%;
+    height: 100%;
+    background-color: #e9ecef;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mapMarker {
+    font-size: 3rem;
+    color:#8CC63F;
+}
+
+@media (max-width: 768px) {
+    .contactoContainer {
+        padding: 1rem;
+    }
+
+    .contactoHeader h1 {
+        font-size: 2rem;
+    }
+
+    .contactContent > div {
+        margin-bottom: 1.5rem;
+    }
+}

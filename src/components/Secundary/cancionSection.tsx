@@ -22,15 +22,14 @@ const CancionSection: React.FC<CancionSectionProps> = ({ cancionCard, cancionRef
     return (
         <div className={styles.cancionContainer} ref={cancionRef}>
             <h2
-                style={{color: '#333', margin: 0, background:"white", marginTop:-20, fontSize: 18, textTransform: "uppercase", letterSpacing:0.5, fontWeight:700}}>
+                style={{color: '#333', margin: 0, background:"white", marginTop:-18, fontSize: 24, textTransform: "uppercase", letterSpacing:0.5, fontWeight:700}}>
                 <YoutubeOutlined className="titleIcon" style={{ color: '#ff4d4f', fontSize: '24px', marginRight: 10}} />
                 Cancion Oficial</h2>
-            <p className={styles.sectionSubtitle}>Descubre la canción oficial de VisitaEcuador Influencer</p>
+            <p className={styles.sectionSubtitle}>Descubre nuestra canción oficial </p>
 
             {cancionCard.map((cancion, index) => (
                 <Badge.Ribbon text="Oficial" color="#339933" key={index}>
                     <Card
-                        hoverable
                         cover={<Cancion/>}
                         className={styles.cancionCard}
                     >

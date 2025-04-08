@@ -1,34 +1,29 @@
-/* Update the cancion.module.css file with these styles */
 .cancionContainer {
     padding: 0 0 20px 0;
     width: 100%;
+    margin-bottom: 80px;
 }
 
 .sectionSubtitle {
-    font-size: 14px;
+    font-size: 16px;
     color: #666;
-    margin-bottom: 16px;
+    margin-bottom: 27px;
     text-align: left;
-    margin-left: 10px;
+    margin-left: 50px;
 }
 
 .cancionCard {
     border-radius: 12px;
     height: 500px;
     overflow: hidden;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: none;
-    background: linear-gradient(to bottom right, #f9f9f9, #f0f0f0);
+    background: white;
     width: 100%;
 }
 .iframe{
     height: 300px;
 }
-.cancionCard:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
-}
+
 
 .cancionContent {
     padding: 16px;

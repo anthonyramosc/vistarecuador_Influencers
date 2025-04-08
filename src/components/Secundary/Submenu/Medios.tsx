@@ -1,7 +1,12 @@
-import React from 'react';
-import { Tabs, Card, Button } from 'antd';
+import React, { useState } from 'react';
+import { Tabs, Card, Button, Modal, Space } from 'antd';
 import styles from '../../styles/adherentes.module.css';
-import {FundViewOutlined} from "@ant-design/icons";
+import { FundViewOutlined, PlayCircleFilled, ShareAltOutlined, ExportOutlined } from "@ant-design/icons";
+import imgP from '../../../assets/entrevistas/img.png';
+import imgP1 from '../../../assets/entrevistas/img_1.png';
+import imgP2 from '../../../assets/entrevistas/img_2.png';
+
+
 
 const { TabPane } = Tabs;
 
@@ -14,7 +19,15 @@ interface MediaItem {
     url: string;
 }
 
+interface VideoItem extends MediaItem {
+    videoUrl: string;
+    platform: string;
+}
+
 const Medios: React.FC = () => {
+    const [isModalVisible, setIsModalVisible] = useState(false);
+    const [currentVideo, setCurrentVideo] = useState<VideoItem | null>(null);
+
     const newsItems: MediaItem[] = [
         {
             title: "VisitaEcuador Influencer lanza nueva plataforma para creadores de contenido",
@@ -42,22 +55,36 @@ const Medios: React.FC = () => {
         }
     ];
 
-    const interviewItems: MediaItem[] = [
+    const videoItems: VideoItem[] = [
         {
             title: "Entrevista con Bernardo Polo Andrade, director de VisitaEcuador Influencer",
             description: "Conversamos sobre el crecimiento del programa y los planes futuros para promover el turismo ecuatoriano a través de creadores digitales.",
-            imageUrl: "https://visitaecuadorinfluencer.com/img/diseno/interview1.jpg",
+            imageUrl: imgP,
+            videoUrl: "https://www.youtube.com/embed/jXB-9I6uUkw",
             source: "Ecuador TV",
             date: "10/02/2024",
-            url: "#"
+            url: "#",
+            platform: "YouTube"
         },
         {
             title: "Los desafíos de promover destinos turísticos en redes sociales",
             description: "Influencers ecuatorianos hablan sobre su experiencia promocionando atractivos del país y los retos que enfrentan.",
-            imageUrl: "https://visitaecuadorinfluencer.com/img/diseno/interview2.jpg",
+            imageUrl: imgP1 ,
+            videoUrl: "https://www.youtube.com/embed/lmnopqrstu",
             source: "Radio Pichincha",
             date: "22/04/2024",
-            url: "#"
+            url: "#",
+            platform: "YouTube"
+        },
+        {
+            title: "Turismo comunitario: nueva tendencia en Ecuador",
+            description: "Conversatorio con representantes de comunidades y creadores de contenido sobre el impulso al turismo comunitario.",
+            imageUrl: imgP2,
+            videoUrl: "https://www.youtube.com/embed/vwxyz12345",
+            source: "VisitaEcuador TV",
+            date: "15/03/2024",
+            url: "#",
+            platform: "YouTube"
         }
     ];
 
@@ -88,6 +115,34 @@ const Medios: React.FC = () => {
         }
     ];
 
+    const showVideoModal = (video: VideoItem) => {
+        setCurrentVideo(video);
+        setIsModalVisible(true);
+    };
+
+    const handleCancel = () => {
+        setIsModalVisible(false);
+    };
+
+    const shareVideo = () => {
+        if (currentVideo && navigator.share) {
+            navigator.share({
+                title: currentVideo.title,
+                text: currentVideo.description,
+                url: currentVideo.url
+            }).catch((error) => console.log('Error sharing', error));
+        } else {
+            // Fallback for browsers that don't support Web Share API
+            const dummy = document.createElement('input');
+            document.body.appendChild(dummy);
+            dummy.value = currentVideo?.url || '';
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+            alert('Enlace copiado al portapapeles');
+        }
+    };
+
     const renderMediaItems = (items: MediaItem[]) => {
         return (
             <div className={styles.mediaGrid}>
@@ -112,6 +167,42 @@ const Medios: React.FC = () => {
         );
     };
 
+    const renderVideoItems = (items: VideoItem[]) => {
+        return (
+            <div className={styles.mediaGrid}>
+                {items.map((item, index) => (
+                    <Card
+                        key={index}
+                        className={`${styles.mediaCard} ${styles.videoCard}`}
+                        cover={
+                            <div className={styles.videoThumbnail}>
+                                <img alt={item.title} src={item.imageUrl} className={styles.mediaImage} />
+                                <div className={styles.playButtonOverlay} onClick={() => showVideoModal(item)}>
+                                    <PlayCircleFilled className={styles.playButton} />
+                                </div>
+                            </div>
+                        }
+                    >
+                        <h3 className={styles.mediaTitle}>{item.title}</h3>
+                        <p className={styles.mediaDescription}>{item.description}</p>
+                        <div className={styles.mediaFooter}>
+                            <span className={styles.mediaSource}>{item.source}</span>
+                            <span className={styles.mediaDate}>{item.date}</span>
+                        </div>
+                        <Button
+                            type="primary"
+                            className={styles.watchVideoButton}
+                            icon={<PlayCircleFilled />}
+                            onClick={() => showVideoModal(item)}
+                        >
+                            Ver Entrevista
+                        </Button>
+                    </Card>
+                ))}
+            </div>
+        );
+    };
+
     return (
         <div className={styles.mediosContainer}>
             <h2 className="sectionTitle" style={{
@@ -124,7 +215,7 @@ const Medios: React.FC = () => {
                 fontWeight: 700
             }}>
                 <FundViewOutlined className="titleIcon"
-                              style={{color: '#ff4d4f', fontSize: '24px', gap: '10px', marginRight: '10px'}}/>
+                                  style={{color: '#ff4d4f', fontSize: '24px', gap: '10px', marginRight: '10px'}}/>
                 Medios
             </h2>
             <div className={styles.mediosDescription}>
@@ -140,7 +231,7 @@ const Medios: React.FC = () => {
                 </TabPane>
 
                 <TabPane tab="Entrevistas" key="2">
-                    {renderMediaItems(interviewItems)}
+                    {renderVideoItems(videoItems)}
                 </TabPane>
 
                 <TabPane tab="Comunicados de Prensa" key="3">
@@ -167,6 +258,55 @@ const Medios: React.FC = () => {
                     />
                 </div>
             </div>
+
+            <Modal
+                title={currentVideo?.title}
+                visible={isModalVisible}
+                onCancel={handleCancel}
+                footer={null}
+                width={800}
+                className={styles.videoModal}
+                centered
+            >
+                <div className={styles.videoContainer}>
+                    <iframe
+                        src={currentVideo?.videoUrl}
+                        title={currentVideo?.title}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className={styles.videoFrame}
+                    ></iframe>
+                </div>
+
+                <p className={styles.modalDescription}>{currentVideo?.description}</p>
+
+                <div className={styles.modalFooter}>
+                    <div className={styles.videoInfo}>
+                        <span className={styles.videoSource}>{currentVideo?.source}</span>
+                        <span className={styles.videoDate}>{currentVideo?.date}</span>
+                    </div>
+
+                    <Space>
+                        <Button
+                            type="primary"
+                            icon={<ShareAltOutlined />}
+                            onClick={shareVideo}
+                            className={styles.shareButton}
+                        >
+                            Compartir
+                        </Button>
+                        <Button
+                            icon={<ExportOutlined />}
+                            href={currentVideo?.url}
+                            target="_blank"
+                            className={styles.platformButton}
+                        >
+                            Ver en {currentVideo?.platform}
+                        </Button>
+                    </Space>
+                </div>
+            </Modal>
         </div>
     );
 };

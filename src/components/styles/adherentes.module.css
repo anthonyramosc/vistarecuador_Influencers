@@ -221,6 +221,7 @@
 
 .mediaImage {
     height: 200px;
+    width: 100%;
     object-fit: cover;
 }
 
@@ -305,6 +306,143 @@
     width: 100%;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.videoCard {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.videoCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.videoThumbnail {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.playButtonOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.videoThumbnail:hover .playButtonOverlay {
+    opacity: 1;
+}
+
+.playButton {
+    font-size: 64px;
+    color: white;
+    filter: drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.5));
+    transition: transform 0.3s ease;
+}
+
+.videoThumbnail:hover .playButton {
+    transform: scale(1.1);
+}
+
+.watchVideoButton {
+    background-color: #8CC63F;
+    border-color: #8CC63F;
+    width: 100%;
+}
+
+
+
+.videoModal .ant-modal-body {
+    padding: 16px;
+}
+
+.videoContainer {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.videoFrame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.modalDescription {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 16px;
+}
+
+.modalFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #eee;
+}
+
+.videoInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.videoSource {
+    font-weight: 600;
+    color: #444;
+}
+
+.videoDate {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.shareButton {
+    background-color: #1890ff;
+    border-color: #1890ff;
+}
+
+.shareButton:hover {
+    background-color: #40a9ff;
+    border-color: #40a9ff;
+}
+
+.platformButton {
+    border-color: #8CC63F;
+    color: #8CC63F;
+}
+
+.platformButton:hover {
+    color: #7ab334;
+    border-color: #7ab334;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .modalFooter {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .videoInfo {
+        margin-bottom: 8px;
+    }
 }
 
 @media (max-width: 768px) {

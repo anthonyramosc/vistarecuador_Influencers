@@ -19,6 +19,12 @@ import Presentacion from "../components/Secundary/Submenu/Presentacion.tsx";
 import Medios from "../components/Secundary/Submenu/Medios.tsx";
 import Adhesion from "../components/Secundary/Submenu/Adhesion.tsx";
 import Beneficios from "../components/Secundary/Submenu/Beneficios.tsx";
+import Contactanos from "../components/Secundary/Contactanos.tsx";
+import imgP from '../assets/Descargas/img.png';
+import imgP1 from '../assets/Descargas/img_1.png';
+import imgP2 from '../assets/Descargas/img_2.png';
+import imgP3 from '../assets/Descargas/img_3.png';
+import imgP4 from '../assets/Descargas/img_4.png';
 
 
 interface MenuClickEvent extends CustomEvent {
@@ -35,6 +41,7 @@ const Dashboard = () => {
     const [showBeneficios, setShowBeneficios] = useState(false);
     const [showAdhesion, setShowAdhesion] = useState(false);
     const [showMedios, setShowMedios] = useState(false);
+    const [showContacto, setShowContacto] = useState(false);
 
     useEffect(() => {
         const handleScrollToCancion = () => {
@@ -59,6 +66,7 @@ const Dashboard = () => {
             setShowBeneficios(false);
             setShowAdhesion(false);
             setShowMedios(false);
+            setShowContacto(false);
         };
         const handlePresentacionClick = () => {
             setShowPresentacion(true);
@@ -66,6 +74,7 @@ const Dashboard = () => {
             setShowBeneficios(false);
             setShowAdhesion(false);
             setShowMedios(false);
+            setShowContacto(false);
         };
         const handleMediosClick = () => {
             setShowMedios(true);
@@ -73,6 +82,7 @@ const Dashboard = () => {
             setShowAdhesion(false);
             setShowSerEmbajador(false);
             setShowPresentacion(false);
+            setShowContacto(false);
         };
         const handleBeneficiosClick = () => {
             setShowBeneficios(true);
@@ -80,6 +90,7 @@ const Dashboard = () => {
             setShowAdhesion(false);
             setShowSerEmbajador(false);
             setShowPresentacion(false);
+            setShowContacto(false);
         };
         const handleAdhesionClick = () => {
             setShowAdhesion(true);
@@ -87,7 +98,18 @@ const Dashboard = () => {
             setShowMedios(false);
             setShowSerEmbajador(false);
             setShowPresentacion(false);
+            setShowContacto(false);
         };
+
+        const handleContactoClick = () => {
+            setShowContacto(true);
+            setShowAdhesion(false);
+            setShowBeneficios(false);
+            setShowMedios(false);
+            setShowSerEmbajador(false);
+            setShowPresentacion(false);
+        };
+
 
         const handleOtherMenuClick = (e: MenuClickEvent) => {
             if (e.detail?.menuItem !== 'serEmbajador') {
@@ -106,6 +128,9 @@ const Dashboard = () => {
             if (e.detail?.menuItem !== 'adhesion') {
                 setShowAdhesion(false);
             }
+            if (e.detail?.menuItem !== 'contacto') {
+                setShowContacto(false);
+            }
         };
 
         window.addEventListener("serEmbajadorClick", handleSerEmbajadorClick);
@@ -113,6 +138,7 @@ const Dashboard = () => {
         window.addEventListener("beneficiosClick", handleBeneficiosClick);
         window.addEventListener("mediosClick", handleMediosClick);
         window.addEventListener("adhesionClick", handleAdhesionClick);
+        window.addEventListener("contactoClick", handleContactoClick);
         window.addEventListener("menuClick", handleOtherMenuClick as EventListener);
 
         return () => {
@@ -123,6 +149,7 @@ const Dashboard = () => {
             window.removeEventListener("beneficiosClick", handleBeneficiosClick);
             window.removeEventListener("mediosClick", handleMediosClick);
             window.removeEventListener("adhesionClick", handleAdhesionClick);
+            window.removeEventListener("contactoClick", handleContactoClick);
             window.removeEventListener("menuClick", handleOtherMenuClick as EventListener);
         };
     }, []);
@@ -138,7 +165,7 @@ const Dashboard = () => {
             title: "VisitaEcuador Influencer",
             description: "VisitaEcuador Influencer nace con un objetivo claro: profesionalizar el trabajo de los influencers en Ecuador.",
             image: "https://visitaecuador.com/img/web/ve_quees.png",
-            author: "Bernardo Polo Andrade",
+            author: "Bernardo Polo ",
             rating: 4,
             comments: 10
         },
@@ -244,13 +271,13 @@ const Dashboard = () => {
 
     const promotions = [
         {
-            title: "Descuento 50% en nueva suscripción Club Visita Ecuador",
+            title: "Club Visita",
             description: "Descuento 50% en nueva suscripción Club Visita Ecuador",
             imageUrl: "https://visitaecuadorinfluencer.com/img/diseno/visita.jpg"
         },
         {
             title: "Fin de semana en Guayaquil",
-            description: "Hotel Sonesta 3 Días 2 Noches, 2 Adultos 2 Niños, Incluye Impuestos y Desayunos buffet",
+            description: "Hotel Sonesta 3 Días 2 Noches, 2 Adultos 2 Niños, Incluye buffet",
             imageUrl: "https://visitaecuadorinfluencer.com/img/diseno/logo_hotel.jpg"
         }
     ];
@@ -271,22 +298,22 @@ const Dashboard = () => {
     const downloadItems = [
         {
             title: "Apps",
-            imageUrl: "https://visitaecuador.com/img/web/ve_app_icon.png",
+            imageUrl: imgP,
             isAvailable: true
         },
         {
             title: "Música",
-            imageUrl: "https://visitaecuador.com/img/web/ve_music_icon.png",
+            imageUrl: imgP2,
             isAvailable: false
         },
         {
             title: "Wallpapers",
-            imageUrl: "https://visitaecuador.com/img/web/ve_wallpaper_icon.png",
+            imageUrl: imgP3,
             isAvailable: false
         },
         {
             title: "Fotos",
-            imageUrl: "https://visitaecuador.com/img/web/ve_photo_icon.png",
+            imageUrl: imgP4,
             isAvailable: false
         },
         {
@@ -323,6 +350,8 @@ const Dashboard = () => {
                     <Adhesion/>
             ) : showMedios ? (
                     <Medios/>
+            ) : showContacto ? (
+                    <Contactanos/>
                 ) : (
                 <>
                     <Hero carouselItems={carouselItems} />
@@ -333,7 +362,7 @@ const Dashboard = () => {
                             <RealitySection realityCards={realityCards} />
                             <PromotionsBenefitsSection promotions={promotions} benefits={benefits} />
                             <DownloadsSection downloadItems={downloadItems} />
-                            <ProfileSlider />
+                            <ProfileSlider  />
                         </div>
 
                         <div className={`${styles.sidebarArea} ${styles.sidebarAreaResponsive}`}>
